@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config frontend/webpack.config.js && gulp --gulpfile frontend/gulpfile.js post-build"
+    "build": "webpack --config frontend/webpack.config.js && gulp --gulpfile frontend/gulpfile.js build"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "babel-loader": "^6.2.9",
     "babel-preset-es2015": "^6.18.0",
     "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
     "gulp-replace": "^0.5.4",
     "webpack": "^1.14.0",
     "webpack-manifest-plugin": "^1.1.0"
