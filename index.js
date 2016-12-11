@@ -12,7 +12,7 @@ var defaultStaticOptions = {
 
 var port = process.env.PORT || 3000;
 
-app.use(express.static('public', defaultStaticOptions));
+app.use(express.static('static', defaultStaticOptions));
 app.disable('x-powered-by');
 
 app.listen(port, function () {
