@@ -14,6 +14,7 @@ var port = process.env.PORT || 3000;
 
 app.use(express.static('static', defaultStaticOptions));
 app.use(express.static('frontend/dist', defaultStaticOptions));
+app.use('/assets', express.static('frontend/assets'));
 app.disable('x-powered-by');
 
 app.listen(port, function () {
