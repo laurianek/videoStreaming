@@ -6,13 +6,14 @@ var app = express();
 
 var defaultStaticOptions = {
     extensions: ['html'],
-    maxAge: ms('5m'),
+    maxAge: ms('5s'),
     redirect: true
 };
 
 var port = process.env.PORT || 3000;
 
 app.use(express.static('static', defaultStaticOptions));
+app.use(express.static('frontend/dist', defaultStaticOptions));
 app.disable('x-powered-by');
 
 app.listen(port, function () {

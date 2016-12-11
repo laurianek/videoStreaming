@@ -6,12 +6,12 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  context: path.join(__dirname, 'src'),
-  entry: './main.js',
+  context: __dirname,
+  entry: './src/main.js',
   output: {
     path: 'frontend/dist',
-    filename: 'bundle.min.js',
-    sourceMapFilename: 'bundle.min.js.map'
+    filename: 'bundle-[hash].min.js',
+    sourceMapFilename: 'bundle-[hash].min.js.map'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -25,7 +25,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new ManifestPlugin({
-      fileName: 'dist/rev.json'
+      fileName: './rev.json'
     })
   ],
   module: {
